@@ -1,0 +1,570 @@
+{
+  "questions": [
+    {
+      "title": "For a group presentation I like to help organize the group's efforts",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "For a group presentation I like to contribute something that is uniquely mine, often based on how I feel",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "For a group presentation I prefer to draw all the pictures",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "For a group presentation I prefer to organize and classify the information into categories so it makes sense",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "If something breaks and won't work I tend to study the diagram of how it works",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "For a group presentation I prefer to put new words to a popular tune or use music",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "If something breaks and won't work I try to find someone who can help me",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "If something breaks and won't work I tend to tap my fingers to a beat while I figure it out",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "In an argument I tend ask a friend or some person in authority for help",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "If something breaks down, I look around me to try and see what I can find to fix the problem",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "If I have to memorize something I ask someone to quiz me to see if I know it",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "In an argument I try to keep my distance, keep silent or visualize some solution",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "For a group presentation I prefer to do the  writing and library research",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "In a magazine, I prefer looking at the pictures rather than reading the text",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "Friends ask my advice because I seem to be a natural leader",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "If something breaks and won't work, I wonder if it's worth fixing up",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "In an argument I tend to compare my opponent to someone or something I have read or heard about and react accordingly",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "In an argument I will usually walk away until I calm down",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "I enjoy learning the names of living things in our environment, such as flowers and trees",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "If I have to memorize something I tend to close my eyes and feel the situation",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "For a group presentation I prefer to create the charts and graphs",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "For a group presentation I prefer to move the props around, hold things up or build a model",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "If something breaks and won't work, I read the instruction book first",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "I can remember the melodies of many songs",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "If I have to memorize something I create a rhyme or saying to help me remember",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "If something breaks and won't work, I look at the pieces and try to figure out how it works",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "I like to doodle on paper whenever I can",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "If something breaks and won't work I tend to play with the pieces to try to fit them together",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "I like working with others in groups",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "In an argument I tend to strike out and hit or run away",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "If I have to memorize something I draw a diagram to help me remember",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "If I have to memorize something, I tend to organize it into categories",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "I like helping teach other students",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "I tend to tap my fingers or play with my pencil during class",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "I find that I am strong-willed, independent and don't follow the crowd",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "In an argument, I try to find a fair and logical solution",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "I an argument I tend to shout or punch or move in some sort of rhythm",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "If I have to memorize something I write it out a number of times until I know it",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "I like to draw and create",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "I have several very close friends",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "I know what I am good at and what I am weak at",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "I use a lot of body movements when talking",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "I like talking and writing about my ideas",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "I enjoy computer and any math games",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "In an argument I tend to use put-downs or sarcasm",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "As an adult, I think I would like to get away from the city and enjoy nature",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "If I have to memorize something I try to create a rhyme about the event",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "I love playing chess, checkers or Monopoly",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "I don't like crowds",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "I like to belong to clubs and organizations",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "I enjoy hobbies such as photography",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "I like to have music playing when doing homework or studying",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "I like to collect things (e.g., rocks, sports cards, stamps, etc)",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "I daydream a lot",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "I am a good speller (most of the time)",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "I have trouble sitting still for any length of time",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "I prefer a map to written directions",
+      "Intelligence_type": "Spatial-Visual"
+    },
+    {
+      "title": "I like to work alone without anyone bothering me",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "I enjoy listening to CD's and the radio",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "My favorite class is gym since I like sports",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "I tend to hum to myself when working",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "I really enjoy my math class",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "I enjoy telling stories and jokes",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "I enjoy activities such as woodworking, sewing and building models",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "I have a good memory for trivia",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "I am keenly aware of my surroundings and of what goes on around me",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "I enjoy word games (e.g. Scrabble & puzzles)",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "I like logical math puzzles or brain teasers",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "I love to go walking in the woods and looking at the trees and flowers",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "I find solving math problems to be fun",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "I like to keep a diary",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "I like to sing",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "I read books just for fun",
+      "Intelligence_type": "Linguistic"
+    },
+    {
+      "title": "When looking at things, I like touching them",
+      "Intelligence_type": "Bodily-Kinesthetic"
+    },
+    {
+      "title": "I like myself (most of the time)",
+      "Intelligence_type": "Intrapersonal"
+    },
+    {
+      "title": "If I have to memorize something I tend to place events in a logical order",
+      "Intelligence_type": "Logical-Mathematical"
+    },
+    {
+      "title": "I play a musical instrument quite well",
+      "Intelligence_type": "Musical"
+    },
+    {
+      "title": "I get along well with others",
+      "Intelligence_type": "Interpersonal"
+    },
+    {
+      "title": "I enjoy gardening",
+      "Intelligence_type": "Naturalist"
+    },
+    {
+      "title": "I like to find out how things work",
+      "Intelligence_type": "Logical-Mathematical"
+    }
+  ],
+  "intellegnces": {
+    "Linguistic": {
+      "activites": [
+        "Write a set of instructions",
+        "Speak on a subject",
+        "Edit a written piece or work",
+        "Write a speech",
+        "Commentate on an event",
+        "Apply positive or negative 'spin' to a story"
+      ],
+      "description": "You enjoy playing with words, both in writing and speech. Whether it's explaining ideas, writing speeches, or adding a special touch to stories, you're the go-to person for all things language-related. Think of yourself as a linguistic wizard, easily understanding the connection between words and their deeper meanings. You might fancy being a writer, journalist, or someone who can make any piece of writing shine. In a nutshell, you're the language maestro, turning every sentence into a masterpiece.",
+      "faculties": [
+        "Faculty of Arts",
+        "Faculty of Languages",
+        "Faculty of Law",
+        "Faculty of Mass Communication",
+        "Faculty of Education"
+      ],
+      "roles": [
+        "Writer",
+        "Lawyer",
+        "Journalist",
+        "Speaker",
+        "Trainer",
+        "Copy-writer",
+        "Language teacher",
+        "Poet",
+        "editor",
+        "Linguist",
+        "Translator",
+        "PR consultant",
+        "media consultant",
+        "TV and radio presenter",
+        "voice-over artist"
+      ]
+    },
+    "Musical": {
+      "activites": [
+        "Perform a musical piece",
+        "Sing a song",
+        "Review a musical work",
+        "Coach someone to play a musical instrument",
+        "Specify mood music for telephone systems and receptions"
+      ],
+      "description": "You find joy in the language of music, where every note and rhythm speaks to your soul. Whether performing a beautiful melody, singing a heartfelt song, or coaching someone in the art of playing an instrument, you thrive in the world of sound and rhythm. Imagine yourself as a musical maestro, creating harmonies that resonate with emotions. If you're passionate about music, envision a future as a musician, singer, or composer, where every sound becomes a masterpiece in your hands.",
+      "faculties": [
+        "Faculty of Music Education",
+        "Faculty of Arts (Department of Music)",
+        "Faculty of Mass Communication",
+        "Faculty of Tourism and Hotels"
+      ],
+      "roles": [
+        "Musician",
+        "Singer",
+        "Composer",
+        "DJ",
+        "Music producer",
+        "Piano tuner",
+        "Acoustic engineer",
+        "Entertainer",
+        "Party-planner",
+        "Environment and noise advisor",
+        "Voice coache"
+      ]
+    },
+    "Logical-Mathematical": {
+      "activites": [
+        "Perform a mental arithmetic calculation",
+        "Create a process to measure something difficult",
+        "Analyze how a machine works; create a process",
+        "Devise a strategy to achieve an aim",
+        "Assess the value of a business or a proposition"
+      ],
+      "description": "You thrive in the world of logic and numbers, where your mind dances with patterns and scientific puzzles. Whether it's tackling complex mathematical calculations or devising strategies to achieve goals, you revel in the precision of cause and effect. Picture yourself as the Sherlock Holmes of problem-solving, making sense of intricate machines and creating processes with ease. If you enjoy the thrill of unraveling mysteries through logical thinking, your journey might lead you to become a scientist, engineer, or computer expert, where numbers and logic are your trusted companions.",
+      "faculties": [
+        "Faculty of Science",
+        "Faculty of Engineering",
+        "Faculty of Computers and Information Sciences",
+        "Faculty of Commerce",
+        "Faculty of Economics and Political Science"
+      ],
+      "roles": [
+        "Scientist",
+        "Engineer",
+        "Computer expert",
+        "Mathematician",
+        "Accountant",
+        "Statistician",
+        "Researcher",
+        "Analyst",
+        "Trader",
+        "Banker bookmakers",
+        "Insurance broker",
+        "Negotiator",
+        "Deal-maker",
+        "Trouble-shooter",
+        "Director"
+      ]
+    },
+    "Bodily-Kinesthetic": {
+      "activites": [
+        "Juggle",
+        "Demonstrate a sports technique",
+        "Flip a beer-mat",
+        "Create a mime to explain something",
+        "Toss a pancake",
+        "Fly a kite",
+        "Coach workplace posture",
+        "Assess work-station ergonomics"
+      ],
+      "description": " You thrive in the world of movement and physical expression, where your body becomes a canvas for agility and coordination. Whether it's dancing, demonstrating a sports technique, or crafting a mime to convey a message, you find joy in the art of bodily-kinaesthetic intelligence. Imagine yourself as a performer, athlete, or even an adventurer, where every action is a testament to your physical prowess. If you revel in hands-on experiences, envision a future as a dancer, athlete, or even a healer, where touch and movement become your language of expression.",
+      "faculties": [
+        "Faculty of Music Education",
+        "Faculty of Physical Education",
+        "Faculty of Medicine",
+        "Faculty of Agriculture",
+        "Faculty of Tourism and Hotel Management",
+        "Faculty of Fine Arts",
+        "Faculty of Arts",
+        "Faculty of Mass Communication"
+      ],
+      "roles": [
+        "Dancer",
+        "Demonstrator",
+        "Actor",
+        "Athlete",
+        "Diver",
+        "Sports-people",
+        "Soldier",
+        "fire-fighter",
+        "Performance artist",
+        "Ergonomist",
+        "Osteopaths",
+        "Fishermen",
+        "Driver",
+        "Crafts-people",
+        "Gardener",
+        "Chef",
+        "Acupuncturist",
+        "Adventurer"
+      ]
+    },
+    "Spatial-Visual": {
+      "activites": [
+        "Design a costume",
+        "Interpret a painting",
+        "Create a room layout; create a corporate logo",
+        "Design a building",
+        "Pack a suitcase or the boot of a car"
+      ],
+      "description": "You have a natural gift for seeing and creating visual wonders, where images come to life in your mind's eye. Whether designing a costume, interpreting a painting, or crafting a room layout, you revel in the world of visual and spatial perception. Imagine yourself as an artist, architect, or designer, where every stroke and shape tells a unique story. If you enjoy bringing ideas to life through images and spaces, envision a future filled with creativity and innovation in the realms of art, design, or architecture.",
+      "faculties": [
+        "Faculty of Fine Arts",
+        "Faculty of Applied Arts",
+        "Faculty of Engineering (Department of Architecture)",
+        "Faculty of Urban and Regional Planning",
+        "Faculty of Pharmacy"
+      ],
+      "roles": [
+        "Artist",
+        "Designer",
+        "Cartoonist",
+        "Story-boarder",
+        "Architect",
+        "Photographer",
+        "Sculptor",
+        "Town-planner",
+        "Visionary",
+        "Inventor",
+        "Cosmetics and Beauty consultant"
+      ]
+    },
+    "Interpersonal": {
+      "activites": [
+        "Interpret moods from facial expressions",
+        "Demonstrate feelings through body language",
+        "Affect the feelings of others in a planned way",
+        "Coach or counsel another person"
+      ],
+      "description": "You thrive in the realm of understanding people, where feelings and relationships are your canvas. Imagine yourself as a compassionate guide, whether as a therapist, counselor, or leader, with an innate ability to interpret emotions and connect with others. If you enjoy reading facial expressions, expressing feelings through body language, or influencing others positively, envision a future where your interpersonal intelligence transforms human connections. Your journey could lead you to roles in counseling, HR, or any field where human contact, communication, and teamwork are key.",
+      "faculties": [
+        "Faculty of Arts (Clinical Psychology Department)",
+        "Faculty of Commerce",
+        "Faculty of Education",
+        "Faculty of Medicine",
+        "Faculty of Mass Communication"
+      ],
+      "roles": [
+        "Therapist",
+        "HR professional",
+        "Mediator",
+        "Leader",
+        "Counselor",
+        "Politician",
+        "Educator",
+        "Sales-people",
+        "Clergy",
+        "Psychologist",
+        "Teacher",
+        "Doctor",
+        "Advertising professional",
+        "Coache and Mentor"
+      ]
+    },
+    "Intrapersonal": {
+      "activites": [
+        "Keep a personal journal to express thoughts and emotions",
+        "Practice mindfulness meditation to increase self-awareness",
+        "Travel alone to new places, providing opportunities for self-discovery and independence",
+        "Attend workshops or courses focused on emotional intelligence"
+      ],
+      "description": "You possess a remarkable gift for self-awareness, navigating the intricate landscape of your own thoughts, beliefs, and reactions to the world. Picture yourself as a thoughtful architect, shaping your personal aims and changes with quiet determination. If you find joy in self-reflection, deciding on your own developmental path, and considering your place in the realm of Emotional Intelligence, envision a future where your intrapersonal intelligence guides you on a journey of self-discovery and growth.",
+      "faculties": [
+        "Faculty of Arts (Department of Psychology)",
+        "Faculty of Commerce",
+        "Faculty of Education",
+        "Faculty of Mass Communication"
+      ],
+      "roles": [
+        "Therapist",
+        "Psychologist",
+        "Philosopher",
+        "Motivational Speaker",
+        "Artist",
+        "Writer"
+      ]
+    },
+    "Naturalistic": {
+      "activites": [
+        "Spend time exploring natural environments",
+        "Start a garden to cultivate plants, flowers, or vegetables",
+        "Develop an interest in bird watching",
+        "Engage in outdoor activities such as camping, hiking or fishing"
+      ],
+      "description": "Nature is your classroom, and you're the expert explorer. If you resonate with naturalistic intelligence, your world is filled with the wonders of botany, biology, and zoology. Whether camping under the stars, nurturing a garden, or hiking through untouched landscapes, you find your joy in the great outdoors. The role of a biologist, conservationist, gardener, or farmer beckons, aligning perfectly with your passion for the environment. As a natural smart, you thrive in understanding, cataloging, and caring for the diverse species that make up our world.",
+      "faculties": ["Faculty of Science", "Faculty of Agriculture"],
+      "roles": [
+        "Biologist",
+        "Conservationist",
+        "Gardener",
+        "Farmer",
+        "Zoo Specialist",
+        "Park Naturalist"
+      ]
+    }
+  }
+}
