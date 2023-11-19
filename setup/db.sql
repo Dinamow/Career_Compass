@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS usr(
     interpersonal INT DEFAULT 0,
     intrapersonal INT DEFAULT 0,
     naturalistic INT DEFAULT 0,
-    Musical INT DEFAULT 0
+    musical INT DEFAULT 0
 );
 
 CREATE USER IF NOT EXISTS 'compass'@'%' IDENTIFIED BY 'password';
