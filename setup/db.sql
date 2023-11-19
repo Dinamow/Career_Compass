@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS usr(
     uuid VARCHAR(50),
     name VARCHAR(100),
     email VARCHAR(100),
-    quiz_type ENUM,
+    quize_type ENUM('High school', 'graduate'),
     linguistic INT DEFAULT 0,
     logical_mathematical INT DEFAULT 0,
     bodily_kinesthetic INT DEFAULT 0,
@@ -14,4 +14,9 @@ CREATE TABLE IF NOT EXISTS usr(
     interpersonal INT DEFAULT 0,
     intrapersonal INT DEFAULT 0,
     naturalistic INT DEFAULT 0,
+    Musical INT DEFAULT 0
 );
+
+CREATE USER 'compass'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON Career_Compass.* TO 'compass'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
