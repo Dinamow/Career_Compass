@@ -3,7 +3,7 @@
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 
 INSERT_SCRIPT="$SCRIPT_DIR/insert.py"
-
+db_sql="$SCRIPT_DIR/db.sql"
 sudo apt update
 sudo apt upgrade -y
 
@@ -29,6 +29,6 @@ if ! pip show Flask &>/dev/null; then
     pip install Flask
 fi
 
-cat db.sql | sudo mysql
+cat $db_sql | sudo mysql
 
 echo $INSERT_SCRIPT | bash
