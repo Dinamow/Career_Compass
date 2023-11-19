@@ -17,6 +17,6 @@ CREATE TABLE IF NOT EXISTS usr(
     Musical INT DEFAULT 0
 );
 
-CREATE USER 'compass'@'%' IDENTIFIED BY 'password';
+CREATE USER IF NOT EXISTS 'compass'@'%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON Career_Compass.* TO 'compass'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
