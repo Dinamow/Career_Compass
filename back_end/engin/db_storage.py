@@ -1,6 +1,7 @@
 import os
 import json
 import mysql.connector
+from uuid import uuid4
 
 class Storage:
     __connection = None
@@ -11,7 +12,7 @@ class Storage:
         file_dir = os.path.dirname(os.path.abspath(__file__))
         json_file_path = os.path.join(file_dir, 'data.json')
         with open(json_file_path) as file:
-            self.storage = json.load(file)
+            self.__storage = json.load(file)
         
         self.__connection = mysql.connector.connect(
             user='compass',
@@ -23,7 +24,7 @@ class Storage:
     def getq(self):
         """return a list of 40 questions"""
 
-        self.__sorted = sorted(self.storage['questions'], key=lambda x: x['Intelligence_type'])
+        self.__sorted = sorted(self.__storage['questions'], key=lambda x: x['Intelligence_type'])
         self.__result = []
         self.__nums = self.ranomize()
         for i in self.__nums:
@@ -59,18 +60,56 @@ class Storage:
         return self.__users
         
 
-    def save(self):
-        with open(json_file_path, 'w') as file:
-            json.dump(self.storage, file, indent=4)
+    def getone(self, unique_url_id):
+        """return a user with the given unique_url_id"""
 
-    def delete(self, key):
-        del self.storage[key]
+        self.__cursor = self.__connection.cursor()
+        self.__query = f"SELECT * FROM usr WHERE uuid = '{unique_url_id}'"
+        self.__cursor.execute(self.__query)
+        self.__user = self.__cursor.fetchone()
+        self.__cursor.close()
 
-    def keys(self):
-        return self.storage.keys()
+        return self.__user
+
+    def exists(self, unique_url_id):
+        """check if the user with uuid exists or not"""
+
+        self.__cursor = self.__connection.cursor()
+        self.__query = f"SELECT * FROM usr WHERE uuid = '{unique_url_id}'"
+        self.__cursor.execute(self.__query)
+        self.__user = self.__cursor.fetchone()
+        self.__cursor.close()
+        
+        return self.__user is not None
+
+    def Eexists(self, Email):
+        """check if the user with Email exists or not"""
+        
+        self.__cursor = self.__connection.cursor()
+        self.__query = f"SELECT * FROM usr WHERE email = '{Email}'"
+        self.__cursor.execute(self.__query)
+        self.__user = self.__cursor.fetchone()
+        self.__cursor.close()
+        
+        return self.__user is not None
+
+    def insert(self, data):
+        """insert the data to db"""
+
+        data['uuid'] = uuid4()
+        self.__command = f"INSERT INTO usr (name, email, uuid, linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalistic, musical, quize_type) VALUES ('{data['name']}', '{data['email']}', '{data['uuid']}', {data['linguistic']}, {data['logical_mathematical']}, {data['bodily_kinesthetic']}, {data['spatial_visual']}, {data['interpersonal']}, {data['intrapersonal']}, {data['naturalistic']}, {data['musical']}, '{data['quize_type']}')"
+        
+        self.__cursor = self.__connection.cursor()
+        self.__cursor.execute(self.__command)
+        self.__connection.commit()
+        self.__cursor.close()
 
     def __str__(self):
-        return str(self.storage)
+        """the string representation of the storage object"""
+
+        return """This is the storage object works as engine for the Career Compass project"""
 
     def __repr__(self):
-        return str(self.storage)
+        """the string representation of the storage object"""
+
+        return """This is the storage object works as engine for the Career Compass project"""
