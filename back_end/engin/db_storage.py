@@ -23,11 +23,11 @@ class Storage:
     def getq(self):
         """return a list of 40 questions"""
 
-        self.storage = sorted(self.storage['questions'], key=lambda x: x['Intelligence_type'])
+        self.__sorted = sorted(self.storage['questions'], key=lambda x: x['Intelligence_type'])
         self.__result = []
         self.__nums = self.ranomize()
         for i in self.__nums:
-            self.__result.append(self.storage[i])
+            self.__result.append(self.__sorted[i])
         return self.__result
 
     def ranomize(self):
@@ -47,8 +47,17 @@ class Storage:
         return result
     
     
-    def set(self, key, value):
-        self.storage[key] = value
+    def getall(self):
+        """return a list of all users"""
+
+        self.__cursor = self.__connection.cursor()
+        self.__query = "SELECT * FROM usr"
+        self.__cursor.execute(self.__query)
+        self.__users = self.__cursor.fetchall()
+        self.__cursor.close()
+
+        return self.__users
+        
 
     def save(self):
         with open(json_file_path, 'w') as file:
