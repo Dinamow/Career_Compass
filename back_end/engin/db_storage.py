@@ -52,12 +52,53 @@ class Storage:
         """return a list of all users"""
 
         self.__cursor = self.__connection.cursor()
-        self.__query = "SELECT * FROM usr"
+        self.__query = "SELECT COUNT(*) FROM usr"
         self.__cursor.execute(self.__query)
-        self.__users = self.__cursor.fetchall()
+        self.__user_count = self.__cursor.fetchone()
+        self.__query = "SELECT COUNT(*) FROM usr WHERE quize_type = 'High school'"
+        self.__cursor.execute(self.__query)
+        self.__user_high = self.__cursor.fetchone()
+        self.__query = "SELECT COUNT(*) FROM usr WHERE quize_type = 'graduate'"
+        self.__cursor.execute(self.__query)
+        self.__user_graduate = self.__cursor.fetchone()
+        self.__query = "SELECT linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalistic, musical FROM usr;"
+        self.__cursor.execute(self.__query)
+        self.__user_values = self.__cursor.fetchall()
         self.__cursor.close()
 
-        return self.__users
+        self.__result = {
+            "linguistic" : 0,
+            "logical_mathematical" : 0,
+            "bodily_kinesthetic" : 0,
+            "spatial_visual" : 0,
+            "interpersonal": 0,
+            "intrapersonal": 0,
+            "naturalistic": 0,
+            "musical": 0
+        }
+        
+        for i in self.__user_values:
+            self.__result['linguistic'] += i[0]
+            self.__result['logical_mathematical'] += i[1]
+            self.__result['bodily_kinesthetic'] += i[2]
+            self.__result['spatial_visual'] += i[3]
+            self.__result['interpersonal'] += i[4]
+            self.__result['intrapersonal'] += i[5]
+            self.__result['naturalistic'] += i[6]
+            self.__result['musical'] += i[7]
+
+        x = 0
+        for i in self.__result.values():
+            x += i
+
+        for i in self.__result:
+            self.__result[i] = float(self.__result[i] / x * 100)
+        
+        self.__result["Completed the quize"] = self.__user_count[0]
+        self.__result["High school students"] = self.__user_high[0]
+        self.__result["Graduates"] = self.__user_graduate[0]
+
+        return self.__result
         
 
     def getone(self, unique_url_id):
@@ -103,7 +144,31 @@ class Storage:
         self.__cursor.execute(self.__command)
         self.__connection.commit()
         self.__cursor.close()
+        
+    def getinfo(self):
+        """gets intelligence info"""
+        return self.__storage['intellegnces']
+    
+    def truth(self):
+        """give the truth"""
+        
+        return {"DINAMOW": "im the best",
+                "Ahmed": "is the gayest"}
+    
+    def sende(self, app, data):
+        """send email to the user"""
+        
+        from flask_mail import Mail, Message
 
+        app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+        app.config['MAIL_PORT'] = 587
+        app.config['MAIL_USE_TLS'] = True
+        app.config['MAIL_USE_SSL'] = False
+        app.config['MAIL_USERNAME'] = 'career1compass@gmail.com'
+        app.config['MAIL_PASSWORD'] = 'hojy yqtt moin ekqh'
+        
+        return Mail(app)
+        
     def __str__(self):
         """the string representation of the storage object"""
 

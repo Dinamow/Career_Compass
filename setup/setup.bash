@@ -29,6 +29,10 @@ if ! pip show Flask &>/dev/null; then
     pip install Flask
 fi
 
+if ! pip show Flask-Mail &>/dev/null; then
+    pip install Flask-Mail
+fi
+
 cat $db_sql | sudo mysql
 
 echo $INSERT_SCRIPT | bash

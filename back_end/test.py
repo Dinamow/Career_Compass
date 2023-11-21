@@ -1,12 +1,24 @@
 #!/usr/bin/python3
 from engin import storage
 from flask import Flask, jsonify, abort, request
+from flask_mail import Message
 
 app = Flask(__name__)
 
 app.url_map.strict_slashes = False
 
 @app.route('/')
+def index():
+    """index 0"""
+
+    __mail = storage.sende(app, None)
+    __subject = "Career Compass"
+    __body = "this is the body"
+    __recipients = ['meemoo102039@gmail.com']
+    __message = Message(subject=__subject, recipients=__recipients, body=__body)
+    __mail.send(__message)
+    return jsonify(storage.truth())
+
 @app.route('/api/v1/questions')
 def home():
     return jsonify(storage.getq())
@@ -32,7 +44,8 @@ def post():
         return abort(400, "Email already exists")
 
     storage.insert(data)
-    return jsonify({}), 201
+    mail = storage.sende(app, data['email'])
+    return jsonify(storage.getinfo()), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
