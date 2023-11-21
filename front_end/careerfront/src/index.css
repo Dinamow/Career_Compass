@@ -7,9 +7,25 @@
   html,
   body {
     font-family: "Poppins", sans-serif;
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .layOutStyle {
-  @apply max-w-[1440px] desctop:mx-auto;
+  @apply desctop:w-[1440px] desctop:mx-auto flex-grow;
+}
+
+/* Ladning page */
+.pLanding {
+  @apply text-second text-lg max-tab:text-[18px] w-[600px] max-tab:w-[470px] max-lg:w-full  max-lg:text-center text-justify;
+}
+
+.header {
+  @apply text-prime font-bold text-2xl;
 }

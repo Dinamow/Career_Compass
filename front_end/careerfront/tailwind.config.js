@@ -14,6 +14,11 @@ export default {
       },
       screens: {
         desctop: "1440px",
+        semiDesctop: "1248px",
+        tab: "1144px",
+      },
+      backgroundImage: {
+        compass: "url('./src/assets/compassBig.png')",
       },
     },
   },
