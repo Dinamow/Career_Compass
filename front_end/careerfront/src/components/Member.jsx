@@ -17,7 +17,7 @@ const Member = ({
       <div className="px-5 pt-3 pb-2 flex flex-col gap-[4px]">
         <h4 className="text-second font-bold">{name}</h4>
         <h4 className="text-prime font-medium">{title}</h4>
-        <p className="text-second">{text}</p>
+        <p className="text-second text-justify">{text}</p>
       </div>
       <div className="flex justify-between items-center px-5 pb-3 pt-[7px]">
         <div className="flex gap-1">

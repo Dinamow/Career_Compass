@@ -4,7 +4,7 @@ const Team = () => {
   return (
     <main className="layOutStyle flex flex-col justify-center items-center gap-5 my-6">
       <h1 className="text-prime font-bold text-2xl">Team Members</h1>
-      <section className="grid grid-cols-2 px-20 gap-5">
+      <section className="grid grid-cols-2 px-20 gap-5 max-lg:grid-cols-1 max-lg:px-8 max-sm:px-3">
         <Member
           name="Ahmed Mohammed"
           title="Front-end developer"

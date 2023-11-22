@@ -3,8 +3,10 @@ import linkedIn from "../assets/linkF.svg";
 
 const Footer = () => {
   return (
-    <footer className="py-3 flex justify-between bg-second items-center px-8">
-      <p className="text-white">© All rights are reserved by Career Compass</p>
+    <footer className="py-3 flex justify-between bg-second items-center px-8 max-md:flex-col max-md:gap-2 max-md:pt-5">
+      <p className="text-white text-center">
+        © All rights are reserved by Career Compass
+      </p>
       <div className="flex gap-3  justify-center items-center">
         <a
           href="https://web.facebook.com/"
