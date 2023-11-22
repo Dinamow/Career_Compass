@@ -1,26 +1,49 @@
 import github from "../assets/github.svg";
 import website from "../assets/website.svg";
 
-const Member = ({ name, title, text, email, github, website, image, alt }) => {
+const Member = ({
+  name,
+  title,
+  text,
+  email,
+  githubL,
+  websiteL,
+  image,
+  alt,
+}) => {
   return (
-    <div>
-      <div></div>
-      <div>
-        <h4>{name}</h4>
-        <h4>{title}</h4>
-        <p>{text}</p>
+    <div className="bg-back border border-gray-300 rounded-sm">
+      <div className={`${image ? image : "bg-slate-300"} h-[250px]`}></div>
+      <div className="px-5 pt-3 pb-2 flex flex-col gap-[4px]">
+        <h4 className="text-second font-bold">{name}</h4>
+        <h4 className="text-prime font-medium">{title}</h4>
+        <p className="text-second">{text}</p>
       </div>
-      <div>
-        <div>
-          <a href="">
+      <div className="flex justify-between items-center px-5 pb-3 pt-[7px]">
+        <div className="flex gap-1">
+          <a href={websiteL} target="_blank" className="hover:opacity-90">
+            <img
+              src={website}
+              alt={`website ${alt}`}
+              width="22px"
+              height="22px"
+            />
+          </a>
+          <a href={githubL} target="_blank" className="hover:opacity-90">
             <img
               src={github}
               alt={`github ${alt}`}
-              width="20px"
-              height="20px"
+              width="22px"
+              height="22px"
             />
           </a>
         </div>
+        <a
+          href={`mailto:${email}`}
+          className="font-medium text-white bg-second px-8 py-2 rounded-sm hover:opacity-90"
+        >
+          Hire me
+        </a>
       </div>
     </div>
   );

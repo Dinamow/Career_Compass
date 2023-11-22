@@ -1,9 +1,57 @@
 import { NavLink } from "react-router-dom";
 import Card from "../components/Card";
 import Statstic from "../components/Statstic";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const LandingPage = () => {
-  let url = import.meta.env.VITE_URL;
+  const [completed, setCompleted] = useState([]);
+  const [statistics, setStatistics] = useState([]);
+
+  useEffect(() => {
+    let url = `${import.meta.env.VITE_URL}statistics`;
+    axios.get(url).then((res) => {
+      const first = [
+        res.data["Completed the quize"],
+        { number: `${res.data["Graduates"]} people`, name: "Graduates" },
+        {
+          number: `${res.data["High school students"]} people`,
+          name: "High school students",
+        },
+      ];
+      const second = [
+        "100%",
+        {
+          number: `${res.data["bodily_kinesthetic"].toFixed(2)}%`,
+          name: "Bodily-Kinesthetic",
+        },
+        {
+          number: `${res.data["interpersonal"].toFixed(2)}%`,
+          name: "Interpersonal",
+        },
+        {
+          number: `${res.data["intrapersonal"].toFixed(2)}%`,
+          name: "Intrapersonal",
+        },
+        { number: `${res.data["linguistic"].toFixed(2)}%`, name: "Linguistic" },
+        { number: `${res.data["musical"].toFixed(2)}%`, name: "Musical" },
+        {
+          number: `${res.data["naturalistic"].toFixed(2)}%`,
+          name: "Naturalist",
+        },
+        {
+          number: `${res.data["spatial_visual"].toFixed(2)}%`,
+          name: "Visual-Spatial",
+        },
+        {
+          number: `${res.data["logical_mathematical"].toFixed(2)}%`,
+          name: "Logical-Mathematical",
+        },
+      ];
+      setCompleted(first);
+      setStatistics(second);
+    });
+  }, []);
   return (
     <main className="layOutStyle  px-8 max-sm:px-5 flex flex-col gap-5">
       <header className="flex max-lg:flex-col-reverse justify-between  items-center mt-5">
@@ -72,11 +120,11 @@ const LandingPage = () => {
       </section>
       <section className="flex flex-col gap-3 mb-10">
         <h1 className="header mb-5">Statistics</h1>
-        <div className="grid grid-cols-2 gap-5">
-          <Statstic head="Intelligence Types" />
+        <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5">
+          <Statstic head="Intelligence Types" data={statistics} />
           <div className="grid grid-rows-2 gap-5">
-            <Statstic head="Completed the Quiz" />
-            <div className="flex flex-col bg-second text-center gap-3  justify-center rounded-sm items-center px-4 py-6">
+            <Statstic head="Completed the Quiz" data={completed} />
+            <div className="flex flex-col pb-3 bg-second text-center gap-3  justify-center rounded-sm items-center">
               <h3 className="text-light text-2xl font-bold">What about you?</h3>
               <NavLink
                 to="/info"
