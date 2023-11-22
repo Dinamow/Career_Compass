@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS usr(
     spatial_visual INT DEFAULT 0,
     interpersonal INT DEFAULT 0,
     intrapersonal INT DEFAULT 0,
-    naturalistic INT DEFAULT 0,
+    naturalist INT DEFAULT 0,
     musical INT DEFAULT 0
 );
 

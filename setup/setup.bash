@@ -8,11 +8,14 @@ sudo apt update
 sudo apt upgrade -y
 
 # Check if Python is installed
-if ! command -v python &>/dev/null; then
+if ! command -v python3 &>/dev/null; then
     sudo apt install -y python3-pip
 fi
 
-# Check if MySQL is installed
+if ! command -v npm &>/dev/null; then
+    sudo apt install -y npm
+fi
+
 if ! command -v mysql &>/dev/null; then
     sudo apt install -y mysql-server
 fi

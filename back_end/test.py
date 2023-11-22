@@ -3,6 +3,7 @@ from engin import storage
 from flask import Flask, jsonify, abort, request
 from flask_mail import Message
 from flask_cors import CORS
+from uuid import uuid4
 
 app = Flask(__name__)
 
@@ -45,9 +46,13 @@ def post():
     if storage.Eexists(data['email']):
         return abort(400, "Email already exists")
 
+    data['uuid'] = uuid4()
+
     storage.insert(data)
+    user = storage.getone(data['uuid'])
+
     mail = storage.sende(app, data['email'])
-    return jsonify(storage.getinfo()), 200
+    return jsonify(storage.getinfo(user)), 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5002, debug=True)

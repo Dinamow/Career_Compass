@@ -137,7 +137,6 @@ class Storage:
     def insert(self, data):
         """insert the data to db"""
 
-        data['uuid'] = uuid4()
         self.__command = f"INSERT INTO usr (name, email, uuid, linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalistic, musical, quize_type) VALUES ('{data['name']}', '{data['email']}', '{data['uuid']}', {data['linguistic']}, {data['logical_mathematical']}, {data['bodily_kinesthetic']}, {data['spatial_visual']}, {data['interpersonal']}, {data['intrapersonal']}, {data['naturalistic']}, {data['musical']}, '{data['quize_type']}')"
         
         self.__cursor = self.__connection.cursor()
@@ -145,9 +144,21 @@ class Storage:
         self.__connection.commit()
         self.__cursor.close()
         
-    def getinfo(self):
+    def getinfo(self, user):
         """gets intelligence info"""
-        return self.__storage['intellegnces']
+        
+        skip = ["id", "uuid", "name", "email", "quize_type"]
+        
+        for i in skip:
+            del user[i]
+        
+        self.__sorted_items = sorted(user.items(), key=lambda x: x[1], reverse=True)
+        self.__largest_keys = [self.__sorted_items[0] for self.__sorted_items in self.__sorted_items[:2]]
+        
+        for i in self.__largest_keys:
+            self.__resuilt = self.__storage[i]
+        
+        return self.__resuilt['intellegnces']
     
     def truth(self):
         """give the truth"""
