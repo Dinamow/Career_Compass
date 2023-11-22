@@ -33,6 +33,10 @@ if ! pip show Flask-Mail &>/dev/null; then
     pip install Flask-Mail
 fi
 
+if ! pip show flask-cors &>/dev/null; then
+    pip install flask-cors
+fi
+
 cat $db_sql | sudo mysql
 
 echo $INSERT_SCRIPT | bash

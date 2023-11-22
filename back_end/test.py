@@ -2,10 +2,12 @@
 from engin import storage
 from flask import Flask, jsonify, abort, request
 from flask_mail import Message
+from flask_cors import CORS
 
 app = Flask(__name__)
 
 app.url_map.strict_slashes = False
+CORS(app)
 
 @app.route('/')
 def index():
