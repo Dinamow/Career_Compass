@@ -1,5 +1,5 @@
 const Quiz = () => {
-  return <div>Quiz</div>;
+  return <main className="layOutStyle">Quiz</main>;
 };
 
 export default Quiz;
