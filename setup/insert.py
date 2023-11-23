@@ -28,10 +28,10 @@ for i in range(500):
     spatial_visual = random.randint(min_value, max_value)
     interpersonal = random.randint(min_value, max_value)
     intrapersonal = random.randint(min_value, max_value)
-    naturalistic = random.randint(min_value, max_value)
+    naturalist = random.randint(min_value, max_value)
     musical = random.randint(min_value, max_value)
     quize_type = random.choice(["High school", "graduate"])
-    command = f"INSERT INTO usr (name, email, uuid, linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalistic, musical, quize_type) VALUES ('{name}', '{email}', '{uuid}', {linguistic}, {logical_mathematical}, {bodily_kinesthetic}, {spatial_visual}, {interpersonal}, {intrapersonal}, {naturalistic}, {musical}, '{quize_type}')"
+    command = f"INSERT INTO usr (name, email, uuid, linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalist, musical, quize_type) VALUES ('{name}', '{email}', '{uuid}', {linguistic}, {logical_mathematical}, {bodily_kinesthetic}, {spatial_visual}, {interpersonal}, {intrapersonal}, {naturalist}, {musical}, '{quize_type}')"
     cursor.execute(command)
 
 connection.commit()
