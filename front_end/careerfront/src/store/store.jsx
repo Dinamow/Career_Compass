@@ -11,7 +11,7 @@ const store = (set) => ({
     spatial_visual: 0,
     interpersonal: 0,
     intrapersonal: 0,
-    naturalistic: 0, // edit to naturalist
+    naturalist: 0, // edit to naturalist
   },
   setForm: (form, formData) =>
     set((data) => ({

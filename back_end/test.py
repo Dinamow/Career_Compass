@@ -49,10 +49,8 @@ def post():
     data['uuid'] = uuid4()
 
     storage.insert(data)
-    user = storage.getone(data['uuid'])
 
-    mail = storage.sende(app, data['email'])
-    return jsonify(storage.getinfo(user)), 200
+    return jsonify({}), 201
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5002, debug=True)

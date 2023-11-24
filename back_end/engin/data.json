@@ -322,7 +322,7 @@
     }
   ],
   "intellegnces": {
-    "Linguistic": {
+    "linguistic": {
       "activites": [
         "Write a set of instructions",
         "Speak on a subject",
@@ -357,7 +357,7 @@
         "voice_over artist"
       ]
     },
-    "Musical": {
+    "musical": {
       "activites": [
         "Perform a musical piece",
         "Sing a song",
@@ -386,7 +386,7 @@
         "Voice coache"
       ]
     },
-    "Logical_Mathematical": {
+    "logical_mathematical": {
       "activites": [
         "Perform a mental arithmetic calculation",
         "Create a process to measure something difficult",
@@ -420,7 +420,7 @@
         "Director"
       ]
     },
-    "Bodily_Kinesthetic": {
+    "bodily_kinesthetic": {
       "activites": [
         "Juggle",
         "Demonstrate a sports technique",
@@ -463,7 +463,7 @@
         "Adventurer"
       ]
     },
-    "Spatial_Visual": {
+    "spatial_visual": {
       "activites": [
         "Design a costume",
         "Interpret a painting",
@@ -493,7 +493,7 @@
         "Cosmetics and Beauty consultant"
       ]
     },
-    "Interpersonal": {
+    "interpersonal": {
       "activites": [
         "Interpret moods from facial expressions",
         "Demonstrate feelings through body language",
@@ -525,7 +525,7 @@
         "Coache and Mentor"
       ]
     },
-    "Intrapersonal": {
+    "intrapersonal": {
       "activites": [
         "Keep a personal journal to express thoughts and emotions",
         "Practice mindfulness meditation to increase self_awareness",
@@ -548,14 +548,14 @@
         "Writer"
       ]
     },
-    "Naturalistic": {
+    "naturalist": {
       "activites": [
         "Spend time exploring natural environments",
         "Start a garden to cultivate plants, flowers, or vegetables",
         "Develop an interest in bird watching",
         "Engage in outdoor activities such as camping, hiking or fishing"
       ],
-      "description": "Nature is your classroom, and you're the expert explorer. If you resonate with naturalistic intelligence, your world is filled with the wonders of botany, biology, and zoology. Whether camping under the stars, nurturing a garden, or hiking through untouched landscapes, you find your joy in the great outdoors. The role of a biologist, conservationist, gardener, or farmer beckons, aligning perfectly with your passion for the environment. As a natural smart, you thrive in understanding, cataloging, and caring for the diverse species that make up our world.",
+      "description": "Nature is your classroom, and you're the expert explorer. If you resonate with naturalist intelligence, your world is filled with the wonders of botany, biology, and zoology. Whether camping under the stars, nurturing a garden, or hiking through untouched landscapes, you find your joy in the great outdoors. The role of a biologist, conservationist, gardener, or farmer beckons, aligning perfectly with your passion for the environment. As a natural smart, you thrive in understanding, cataloging, and caring for the diverse species that make up our world.",
       "faculties": ["Faculty of Science", "Faculty of Agriculture"],
       "roles": [
         "Biologist",

@@ -61,7 +61,7 @@ class Storage:
         self.__query = "SELECT COUNT(*) FROM usr WHERE quize_type = 'graduate'"
         self.__cursor.execute(self.__query)
         self.__user_graduate = self.__cursor.fetchone()
-        self.__query = "SELECT linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalistic, musical FROM usr;"
+        self.__query = "SELECT linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalist, musical FROM usr;"
         self.__cursor.execute(self.__query)
         self.__user_values = self.__cursor.fetchall()
         self.__cursor.close()
@@ -73,7 +73,7 @@ class Storage:
             "spatial_visual" : 0,
             "interpersonal": 0,
             "intrapersonal": 0,
-            "naturalistic": 0,
+            "naturalist": 0,
             "musical": 0
         }
         
@@ -84,7 +84,7 @@ class Storage:
             self.__result['spatial_visual'] += i[3]
             self.__result['interpersonal'] += i[4]
             self.__result['intrapersonal'] += i[5]
-            self.__result['naturalistic'] += i[6]
+            self.__result['naturalist'] += i[6]
             self.__result['musical'] += i[7]
 
         x = 0
@@ -110,7 +110,27 @@ class Storage:
         self.__user = self.__cursor.fetchone()
         self.__cursor.close()
 
-        return self.__user
+        self.__result = {}
+        
+        keys = ['linguistic', 'logical_mathematical',
+                'bodily_kinesthetic', 'spatial_visual',
+                'interpersonal', 'intrapersonal',
+                'naturalist', 'musical']
+        
+        for i in keys:
+            self.__result[i] = self.__user[keys.index(i) + 5]
+                
+        self.__sorted_items = sorted(self.__result.items(), key=lambda x: x[1], reverse=True)
+        self.__largest_keys = [self.__sorted_items[0] for
+                               self.__sorted_items in
+                               self.__sorted_items[:2]]
+
+        self.__info = {}
+
+        for i in self.__largest_keys:
+            self.__info[i] = self.__storage['intellegnces'][i]
+        
+        return self.__info
 
     def exists(self, unique_url_id):
         """check if the user with uuid exists or not"""
@@ -137,28 +157,12 @@ class Storage:
     def insert(self, data):
         """insert the data to db"""
 
-        self.__command = f"INSERT INTO usr (name, email, uuid, linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalistic, musical, quize_type) VALUES ('{data['name']}', '{data['email']}', '{data['uuid']}', {data['linguistic']}, {data['logical_mathematical']}, {data['bodily_kinesthetic']}, {data['spatial_visual']}, {data['interpersonal']}, {data['intrapersonal']}, {data['naturalistic']}, {data['musical']}, '{data['quize_type']}')"
+        self.__command = f"INSERT INTO usr (name, email, uuid, linguistic, logical_mathematical, bodily_kinesthetic, spatial_visual, interpersonal, intrapersonal, naturalist, musical, quize_type) VALUES ('{data['name']}', '{data['email']}', '{data['uuid']}', {data['linguistic']}, {data['logical_mathematical']}, {data['bodily_kinesthetic']}, {data['spatial_visual']}, {data['interpersonal']}, {data['intrapersonal']}, {data['naturalist']}, {data['musical']}, '{data['quize_type']}')"
         
         self.__cursor = self.__connection.cursor()
         self.__cursor.execute(self.__command)
         self.__connection.commit()
         self.__cursor.close()
-        
-    def getinfo(self, user):
-        """gets intelligence info"""
-        
-        skip = ["id", "uuid", "name", "email", "quize_type"]
-        
-        for i in skip:
-            del user[i]
-        
-        self.__sorted_items = sorted(user.items(), key=lambda x: x[1], reverse=True)
-        self.__largest_keys = [self.__sorted_items[0] for self.__sorted_items in self.__sorted_items[:2]]
-        
-        for i in self.__largest_keys:
-            self.__resuilt = self.__storage[i]
-        
-        return self.__resuilt['intellegnces']
     
     def truth(self):
         """give the truth"""
@@ -169,7 +173,7 @@ class Storage:
     def sende(self, app, data):
         """send email to the user"""
         
-        from flask_mail import Mail, Message
+        from flask_mail import Mail
 
         app.config['MAIL_SERVER'] = 'smtp.gmail.com'
         app.config['MAIL_PORT'] = 587
