@@ -37,3 +37,20 @@
 .input {
   @apply text-black font-normal focus:border-0 focus:outline-none px-3 py-[7px] rounded-sm;
 }
+
+/* quesiton */
+/* .input_question {
+  @apply hidden;
+} */
+
+.label_question_checked {
+  @apply text-white bg-second   cursor-pointer hover:opacity-80;
+}
+
+.label_question_unchecked {
+  @apply text-prime bg-light   rounded-sm  cursor-pointer hover:opacity-80;
+}
+
+.label_question {
+  @apply w-[230px] max-md:w-full flex gap-4 flex-row-reverse items-center justify-end px-5 py-[10px];
+}

@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 const Info = () => {
   const setForm = useStore((store) => store.setForm);
-  const informaiotion = useStore((store) => store.information);
+  const informaition = useStore((store) => store.information);
+
   const navigate = useNavigate();
 
   function Change(e) {
@@ -12,11 +13,12 @@ const Info = () => {
 
   function submit(e) {
     e.preventDefault();
-    navigate("/quiz");
+    navigate("/quiz?page=1");
+    sessionStorage.setItem("information", JSON.stringify(informaition));
   }
 
   return (
-    <main className="layOutStyle flex justify-center ">
+    <main className="layOutStyle flex justify-center">
       <section className="bg-prime w-full py-5 px-[200px]  max-semiDesctop:px-[80px] max-md:px-[20px] justify-center      rounded-sm flex flex-col">
         <h1 className="text-white font-bold text-2xl mb-8">
           User Profile Information
@@ -28,7 +30,7 @@ const Info = () => {
               type="text"
               name="name"
               id="name"
-              value={informaiotion.name}
+              value={informaition.name}
               onChange={Change}
               required
               className="input mb-5"
@@ -40,7 +42,7 @@ const Info = () => {
               type="email"
               name="email"
               id="email"
-              value={informaiotion.email}
+              value={informaition.email}
               onChange={Change}
               required
               className="input mb-5"
@@ -52,7 +54,7 @@ const Info = () => {
           <select
             name="quize_type"
             id="quize_type"
-            value={informaiotion["quize_type"]}
+            value={informaition["quize_type"]}
             onChange={Change}
             required
             className="focus:border-0 focus:outline-none cursor-pointer py-[7px] px-1"

@@ -36,7 +36,7 @@ const LandingPage = () => {
         { number: `${res.data["linguistic"].toFixed(2)}%`, name: "Linguistic" },
         { number: `${res.data["musical"].toFixed(2)}%`, name: "Musical" },
         {
-          number: `${res.data["naturalist"].toFixed(2)}%`, // edit naturalist to naturalist
+          number: `${res.data["naturalist"].toFixed(2)}%`,
           name: "Naturalist",
         },
         {
