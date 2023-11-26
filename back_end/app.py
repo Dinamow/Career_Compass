@@ -3,7 +3,6 @@ from engin import storage
 from flask import Flask, jsonify, abort, request, render_template
 from flask_mail import Message
 from flask_cors import CORS
-from uuid import uuid4
 
 app = Flask(__name__, static_folder='./build',
             static_url_path='/')
@@ -53,4 +52,4 @@ def post():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    app.run(host='0.0.0.0', port=5002)
