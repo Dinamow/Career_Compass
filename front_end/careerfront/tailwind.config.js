@@ -17,9 +17,6 @@ export default {
         semiDesctop: "1248px",
         tab: "1144px",
       },
-      backgroundImage: {
-        compass: "url('./src/assets/compassBig.png')",
-      },
     },
   },
   plugins: [],

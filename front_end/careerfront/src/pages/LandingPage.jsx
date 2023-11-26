@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import Statstic from "../components/Statstic";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import compassBig from "../assets/compassBig.png";
 
 const LandingPage = () => {
   const [completed, setCompleted] = useState([]);
@@ -75,7 +76,12 @@ const LandingPage = () => {
           </NavLink>
           <p className="text-sm text-light">* No registration required</p>
         </section>
-        <div className="bg-compass bg-cover w-[450px] h-[450px] max-sm:w-[300px] max-sm:h-[300px] max-tab:w-[400px] max-tab:h-[400px]"></div>
+        <div
+          style={{
+            backgroundImage: `url('./${compassBig}')`,
+          }}
+          className=" bg-cover w-[450px] h-[450px] max-sm:w-[300px] max-sm:h-[300px] max-tab:w-[400px] max-tab:h-[400px]"
+        ></div>
       </header>
       <section className="flex flex-col gap-3 mb-10 mt-5">
         <h1 className="header mb-5">What are the Intelligence Types? </h1>
