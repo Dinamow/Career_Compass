@@ -50,14 +50,12 @@ def post():
     if not data:
         return abort(400, "Not a JSON")
 
-    if storage.Eexists(data['email']):
-        return abort(400, "Email already exists")
 
     data['uuid'] = uuid4()
 
     storage.insert(data)
 
-    return jsonify({}), 201
+    return jsonify({'uuid': data['uuid']}), 201
 
 
 if __name__ == '__main__':

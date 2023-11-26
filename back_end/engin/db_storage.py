@@ -133,8 +133,11 @@ class Storage:
         self.__info = {}
 
         for i in self.__largest_keys:
-            self.__info[i] = self.__storage['intellegnces'][i]
-
+            add = self.__storage['intellegnces'][i]
+            add['type'] = i
+            self.__info['types'].append(add)
+        self.__info['name'] = self.__user[2]
+     
         return self.__info
 
     def exists(self, unique_url_id):
