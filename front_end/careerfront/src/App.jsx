@@ -6,6 +6,7 @@ import Team from "./pages/Team";
 import Info from "./pages/Info";
 import Result from "./pages/Result";
 import Quiz from "./pages/Quiz";
+import Notfound from "./pages/Notfound";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/team" element={<Team />} />
         <Route path="/result/:uuid" element={<Result />} />
+        <Route path="*" element={<Notfound />} />
       </Route>
       <Route element={<QuizLayOut />}>
         <Route path="/info" element={<Info />} />

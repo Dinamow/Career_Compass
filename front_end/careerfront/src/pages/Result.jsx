@@ -5,9 +5,11 @@ import facebook from "../assets/facebook.svg";
 import twitter from "../assets/twitter.svg";
 import share from "../assets/share.svg";
 import List from "../components/List";
+import { useNavigate } from "react-router-dom";
 
 const Result = () => {
   const [copied, setCopied] = useState(false);
+  const navigate = useNavigate();
 
   const intelligence_beauty = {
     logical_mathematical: "Logical-Mathematical 📚",
@@ -24,9 +26,15 @@ const Result = () => {
   useEffect(() => {
     const url = `${import.meta.env.VITE_URL}result/${uuid}`;
 
-    axios.get(url).then((response) => setResult(response.data));
+    axios
+      .get(url)
+      .then((response) => setResult(response.data))
+      .catch((err) => {
+        navigate("/NotFound");
+      });
   }, []);
 
+  console.log(result);
   async function copyText() {
     try {
       await navigator.clipboard.writeText(
