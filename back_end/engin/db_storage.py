@@ -193,7 +193,8 @@ class Storage:
     def sende(self, app, data):
         """send email to the user"""
 
-        from flask_mail import Mail
+        from flask_mail import Mail, Message
+        from flask import render_template
 
         app.config['MAIL_SERVER'] = 'smtp.gmail.com'
         app.config['MAIL_PORT'] = 587
@@ -201,8 +202,19 @@ class Storage:
         app.config['MAIL_USE_SSL'] = False
         app.config['MAIL_USERNAME'] = 'career1compass@gmail.com'
         app.config['MAIL_PASSWORD'] = 'hojy yqtt moin ekqh'
+        app.config['MAIL_DEFAULT_SENDER'] = 'career1compass@gmail.com'
 
-        return Mail(app)
+        mail = Mail(app)
+
+        subject = "Career Compass"
+        body = "this is the body"
+        html_body = render_template('email_template.html',
+                                    subject=subject, body=body)
+        recipients = [f'{data["email"]}']
+        message = Message(subject=subject,
+                          recipients=recipients,
+                          html=html_body)
+        mail.send(message)
 
     def __str__(self):
         """the string representation of the storage object"""

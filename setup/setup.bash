@@ -12,6 +12,14 @@ if ! command -v python3 &>/dev/null; then
     sudo apt install -y python3-pip
 fi
 
+if ! command -v gunicorn &>/dev/null; then
+        sudo apt install -y gunicorn
+fi
+
+if ! command -v nginx &>/dev/null; then
+        sudo apt install -y nginx
+fi
+
 if ! command -v npm &>/dev/null; then
     sudo apt install -y npm
 fi

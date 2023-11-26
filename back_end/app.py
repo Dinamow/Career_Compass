@@ -15,15 +15,15 @@ CORS(app)
 def index():
     """index 0"""
 
-    __mail = storage.sende(app, None)
-    __subject = "Career Compass"
-    __body = "this is the body"
-    __recipients = ['meemoo102039@gmail.com']
-    __message = Message(subject=__subject,
-                        recipients=__recipients,
-                        body=__body)
-    __mail.send(__message)
-    return jsonify(storage.truth())
+    data = {}
+    data['email'] = "meemoo102039@gmail.com"
+
+    if not data:
+        abort(400, "Not json")
+
+    storage.sende(app, data)
+
+    return jsonify({"i love you" : "muah"}), 200
 
 
 @app.route('/api/v1/questions')
