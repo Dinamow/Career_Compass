@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ subject }}</title>
-</head>
-<body>
-    <h1>{{ subject }}</h1>
-    <p>{{ body }}</p>
-</body>
+    <style>
+      body,
+      html {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        text-align: justify;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      #result {
+        display: inline-block;
+        padding: 0.4rem 1rem 0.5rem 1rem;
+        background-color: #146c94;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.25rem;
+      }
+      #singiture {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dear {{user}},</h1>
+    <p>
+      Thank you for taking the quiz on our website. We hope you enjoyed it and
+      learned something new about yourself.
+    </p>
+    <p>
+      Based on your quiz results, we have generated a personalized report for
+      you. You can access it by clicking on the link below.
+    </p>
+    <a
+      target="_blank"
+      id="result"
+      href="https://career.dinamow.tech/result/{{uuid}}"
+      >See Result</a
+    >
+    <p>
+      If you have any questions or feedback, please feel free to contact us at
+      support@careercompass.com. We would love to hear from you and assist you
+      in any way we can.
+    </p>
+    <p id="singiture">Sincerely, <span>The Career Compass Team</span></p>
+  </body>
 </html>

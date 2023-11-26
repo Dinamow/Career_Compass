@@ -92,8 +92,14 @@ const Pagination = ({ data, itemsPerPage, setProgress }) => {
       }
     }
     let send_data_url = `${import.meta.env.VITE_URL}result`;
-    console.log(information);
     axios.post(send_data_url, information).then((res) => {
+      for (let i = 1; i <= data.length; i++) {
+        sessionStorage.removeItem(i);
+      }
+      sessionStorage.removeItem("progress");
+      sessionStorage.removeItem("information");
+      sessionStorage.removeItem("questions");
+
       navigate(`/result/${res.data.uuid}`);
     });
   }

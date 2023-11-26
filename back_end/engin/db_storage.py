@@ -162,7 +162,7 @@ class Storage:
 
         return self.__user is not None
 
-    def insert(self, data):
+    def insert(self, data, app, uuid):
         """insert the data to db"""
 
         self.__values = f"VALUES ('{data['name']}', \
@@ -185,6 +185,8 @@ class Storage:
         self.__cursor = self.__connection.cursor()
         self.__cursor.execute(self.__command)
         self.__connection.commit()
+        email = {'email': data['email']}
+        self.sende(app, email, data['name'], uuid)
         self.__cursor.close()
 
     def truth(self):
@@ -193,7 +195,7 @@ class Storage:
         return {"DINAMOW": "im the best",
                 "Ahmed": "is the gayest"}
 
-    def sende(self, app, data):
+    def sende(self, app, data, user, uuid):
         """send email to the user"""
 
         from flask_mail import Mail, Message
@@ -212,7 +214,7 @@ class Storage:
         subject = "Career Compass"
         body = "this is the body"
         html_body = render_template('email_template.html',
-                                    subject=subject, body=body)
+                                    subject=subject, body=body, user=user, uuid=uuid)
         recipients = [f'{data["email"]}']
         message = Message(subject=subject,
                           recipients=recipients,

@@ -53,7 +53,7 @@ const LandingPage = () => {
     });
   }, []);
   return (
-    <main className="layOutStyle  px-8 max-sm:px-5 flex flex-col gap-5">
+    <main className="layOutStyle  px-8 max-sm:px-5 flex flex-col gap-5 bg-back">
       <header className="flex max-lg:flex-col-reverse justify-between  items-center mt-5">
         <section className="flex flex-col gap-1 max-lg:items-center ">
           <h1 className="text-prime font-bold text-2xl  mb-3 max-lg:text-center">

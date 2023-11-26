@@ -11,21 +11,6 @@ app.url_map.strict_slashes = False
 CORS(app)
 
 
-@app.route('/')
-def index():
-    """index 0"""
-
-    data = {}
-    data['email'] = "meemoo102039@gmail.com"
-
-    if not data:
-        abort(400, "Not json")
-
-    storage.sende(app, data)
-
-    return jsonify({"i love you" : "muah"}), 200
-
-
 @app.route('/api/v1/questions')
 def home():
     return jsonify(storage.getq())
@@ -53,7 +38,7 @@ def post():
 
     data['uuid'] = uuid4()
 
-    storage.insert(data)
+    storage.insert(data, app, data['uuid'])
 
     return jsonify({'uuid': data['uuid']}), 201
 
