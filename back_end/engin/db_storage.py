@@ -1,7 +1,6 @@
 import os
 import json
 import mysql.connector
-from uuid import uuid4
 
 
 class Storage:
@@ -131,7 +130,7 @@ class Storage:
                                self.__sorted_items[:2]]
 
         self.__info = {}
-
+        self.__info['types'] = []
         for i in self.__largest_keys:
             add = self.__storage['intellegnces'][i]
             add['type'] = i
