@@ -34,7 +34,6 @@ const Result = () => {
       });
   }, []);
 
-  console.log(result);
   async function copyText() {
     try {
       await navigator.clipboard.writeText(
