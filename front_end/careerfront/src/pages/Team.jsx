@@ -15,10 +15,10 @@ const Team = () => {
           alt="Ahmed's github"
         />
         <Member
-          name="Abdou Dinamow"
+          name="Abdelrhman (DINAMOW) Abdelhammed"
           title="Back-end developer"
-          text="A passionate back-end developer with 0 years of experience in building websites and web applications."
-          email="ahmedmoh0107@gmail.com"
+          text="A passionate back-end developer with wide experience in ASP.NET, Flask, Django, Laravel"
+          email="meemoo102039@gmail.com"
           githubL="https://github.com/Dinamow"
           websiteL="https://github.com/Dinamow"
           alt="Dianmow"
