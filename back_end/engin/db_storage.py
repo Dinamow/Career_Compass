@@ -15,12 +15,18 @@ class Storage:
         with open(json_file_path) as file:
             self.__storage = json.load(file)
 
+    def create(self):
+        """create db conn"""
         self.__connection = mysql.connector.connect(
             user='compass',
             password='password',
             host='localhost',
             database='Career_Compass'
             )
+
+    def close(self):
+        """close the db conn"""
+        self.__connection.close()
 
     def getq(self):
         """return a list of 40 questions"""
@@ -51,6 +57,7 @@ class Storage:
 
     def getall(self):
         """return a list of all users"""
+        self.create()
 
         self.__cursor = self.__connection.cursor()
         self.__query = "SELECT COUNT(*) FROM usr"
@@ -69,6 +76,7 @@ class Storage:
         self.__cursor.execute(self.__query)
         self.__user_values = self.__cursor.fetchall()
         self.__cursor.close()
+        self.close()
 
         self.__result = {
             "linguistic": 0,
@@ -106,12 +114,14 @@ class Storage:
 
     def getone(self, unique_url_id):
         """return a user with the given unique_url_id"""
+        self.create()
 
         self.__cursor = self.__connection.cursor()
         self.__query = f"SELECT * FROM usr WHERE uuid = '{unique_url_id}'"
         self.__cursor.execute(self.__query)
         self.__user = self.__cursor.fetchone()
         self.__cursor.close()
+        self.close()
 
         self.__result = {}
 
@@ -141,23 +151,13 @@ class Storage:
 
     def exists(self, unique_url_id):
         """check if the user with uuid exists or not"""
-
+        self.create()
         self.__cursor = self.__connection.cursor()
         self.__query = f"SELECT * FROM usr WHERE uuid = '{unique_url_id}'"
         self.__cursor.execute(self.__query)
         self.__user = self.__cursor.fetchone()
         self.__cursor.close()
-
-        return self.__user is not None
-
-    def Eexists(self, Email):
-        """check if the user with Email exists or not"""
-
-        self.__cursor = self.__connection.cursor()
-        self.__query = f"SELECT * FROM usr WHERE email = '{Email}'"
-        self.__cursor.execute(self.__query)
-        self.__user = self.__cursor.fetchone()
-        self.__cursor.close()
+        self.close()
 
         return self.__user is not None
 
@@ -181,18 +181,14 @@ class Storage:
                                     naturalist, musical, \
                                         quize_type) {self.__values}"
 
+        self.create()
         self.__cursor = self.__connection.cursor()
         self.__cursor.execute(self.__command)
         self.__connection.commit()
         email = {'email': data['email']}
         self.sende(app, email, data['name'], uuid)
         self.__cursor.close()
-
-    def truth(self):
-        """give the truth"""
-
-        return {"DINAMOW": "im the best",
-                "Ahmed": "is the gayest"}
+        self.close()
 
     def sende(self, app, data, user, uuid):
         """send email to the user"""
