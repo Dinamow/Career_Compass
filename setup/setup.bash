@@ -40,6 +40,10 @@ if ! pip show Flask &>/dev/null; then
     pip install Flask
 fi
 
+if ! pip show pytest &>/dev/null; then
+    pip install pytest
+fi
+
 if ! pip show Flask-Mail &>/dev/null; then
     pip install Flask-Mail
 fi
