@@ -1,2 +1,3 @@
 __pycache__/
 test.bash
+.pytest_cache/

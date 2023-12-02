@@ -33,6 +33,10 @@ if ! pip show Faker &>/dev/null; then
     pip install Faker
 fi
 
+if ! pip show validate_email_address &>/dev/null; then
+    pip install validate_email_address
+fi
+
 if ! pip show mysql-connector-python &>/dev/null; then
     pip install mysql-connector-python
 fi

@@ -1,6 +1,7 @@
 import os
 import json
 import mysql.connector
+from validate_email_address import validate_email
 
 
 class Storage:
@@ -38,6 +39,16 @@ class Storage:
         for i in self.__nums:
             self.__result.append(self.__sorted[i])
         return self.__result
+    
+
+    def is_valid_email(self, email):
+        """check if the email is valid or not"""
+        try:
+            validate_email(email)
+            return True
+        except ValueError:
+            return False
+
 
     def ranomize(self):
         """Return a list of 40 random numbers from 0 to 79"""
@@ -223,6 +234,17 @@ class Storage:
             if data[item] < 5 or data[item] > 20:
                 return {"Error": f"{item} Wrong Value"}
     
+
+    def randomeuser(self):
+        self.create()
+        self.__cursor = self.__connection.cursor()
+        self.__query = "SELECT uuid FROM usr ORDER BY RAND() LIMIT 1"
+        self.__cursor.execute(self.__query)
+        self.__data = self.__cursor.fetchone()
+        self.__cursor.close()
+        self.close()
+        return self.__data[0]
+
 
     def sende(self, app, data, user, uuid):
         """send email to the user"""
