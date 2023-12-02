@@ -26,6 +26,7 @@ fi
 
 if ! command -v mysql &>/dev/null; then
     sudo apt install -y mysql-server
+    sudo systemctl start mysqld
 fi
 
 if ! pip show Faker &>/dev/null; then
