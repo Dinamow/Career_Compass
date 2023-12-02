@@ -161,7 +161,7 @@ class Storage:
 
         return self.__user is not None
 
-    def insert(self, data, app, uuid):
+    def insert(self, data, app):
         """insert the data to db"""
 
         self.__values = f"VALUES ('{data['name']}', \
@@ -186,9 +186,43 @@ class Storage:
         self.__cursor.execute(self.__command)
         self.__connection.commit()
         email = {'email': data['email']}
-        self.sende(app, email, data['name'], uuid)
+        self.sende(app, email, data['name'], data['uuid'])
         self.__cursor.close()
         self.close()
+
+    def postvalidate(self, data):
+        """check if the post methoud data is valid or not"""
+
+        req = ["linguistic", "logical_mathematical",
+           "bodily_kinesthetic", "spatial_visual",
+           "interpersonal", "intrapersonal",
+           "naturalist", "musical"]
+    
+        static = ["name", "email", "quize_type"]
+
+        quize_type = ['High school', 'graduate']
+
+        if not data:
+            return {"Error": "Not a JSON"}
+
+        for item in static:
+            if data.get(item) is None:
+                return {"Error": f"{item} Not found"}
+            if item == "quize_type" and data[item] not in quize_type:
+                return {"Error": f"{item} Wrong Value"}
+            if not isinstance(data[item], str):
+                return {"Error": f"{item} Wrong data type"}
+
+        for item in req:
+            if data.get(item) is None:
+                return {"Error": f"{item} Not found"}
+            if not isinstance(data[item], int) or \
+                    isinstance(data[item], bool):
+                return {"Error": f"{item} Wrong data type"}
+
+            if data[item] < 5 or data[item] > 20:
+                return {"Error": f"{item} Wrong Value"}
+    
 
     def sende(self, app, data, user, uuid):
         """send email to the user"""

@@ -16,9 +16,11 @@ CORS(app)
 def frond_end():
     return app.send_static_file('index.html')
 
+
 @app.errorhandler(404)
 def not_found(e):
     return app.send_static_file('index.html')
+
 
 @app.route('/api/v1/questions')
 def home():
@@ -41,13 +43,12 @@ def unique(unique_url_id):
 def post():
     data = request.get_json()
 
-    if not data:
-        return abort(400, "Not a JSON")
-
+    if storage.postvalidate(data):
+        abort(400, storage.postvalidate(data)["Error"])
 
     data['uuid'] = uuid4()
 
-    storage.insert(data, app, data['uuid'])
+    storage.insert(data, app)
 
     return jsonify({'uuid': data['uuid']}), 201
 
