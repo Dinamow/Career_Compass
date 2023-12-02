@@ -4,6 +4,12 @@ import Statstic from "../components/Statstic";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import compassBig from "../assets/compassBig.png";
+import gardner from "../assets/gardner.png";
+import quote from "../assets/quote.svg";
+import Member from "../components/Member";
+import github from "../assets/github.svg";
+import Feature from "../components/Feature";
+import result from "../assets/result.png";
 
 const LandingPage = () => {
   const [completed, setCompleted] = useState([]);
@@ -83,7 +89,7 @@ const LandingPage = () => {
           className=" bg-cover w-[450px] h-[450px] max-sm:w-[300px] max-sm:h-[300px] max-tab:w-[400px] max-tab:h-[400px]"
         ></div>
       </header>
-      <section className="flex flex-col gap-3 mb-10 mt-5">
+      {/* <section className="flex flex-col gap-3 mb-10 mt-5">
         <h1 className="header mb-5">What are the Intelligence Types? </h1>
         <div className="flex gap-5 flex-wrap ">
           <Card
@@ -123,6 +129,69 @@ const LandingPage = () => {
             color="dark"
           />
         </div>
+      </section> */}
+      <Feature
+        img={gardner}
+        text="This quiz assesses your intelligence types according to Gardner's
+            theory and suggests suitable careers or universities for you."
+        title="Career Compass Quiz"
+        position="l"
+      />
+      <Feature
+        img={result}
+        text="Once you finish the quiz, you'll see the result page with more details about your two strongest types of intelligence. Feel free to share your result with others."
+        title="Career Compass Result"
+        position="r"
+      />
+
+      <section className="flex flex-col items-center justify-between gap-5  mb-10 mt-[80px]">
+        <h1 className="text-prime font-bold text-2xl  mb-5 max-lg:text-center">
+          About Us
+        </h1>
+        <img src={quote} alt="quote" width="40px" height="30px" className="" />
+        <p className=" text-justify text-prime text-lg max-tab:text-[18px] w-[1120px] max-tab:w-[470px] max-lg:w-full">
+          Choosing a career is not an easy decision. Sometimes we may receive
+          advice from our family and friends to pursue certain fields of study,
+          but they may not match our interests or abilities. That is why we
+          created this website to help high school students and graduates find
+          their career path.
+        </p>
+        <p className="text-second text-center text-lg mb-5">
+          - Career Compass team
+        </p>
+        <section className="grid grid-cols-2 px-20 gap-5 max-lg:grid-cols-1 max-lg:px-8 max-sm:px-0">
+          <Member
+            name="Ahmed Mohammed"
+            title="Front-end developer"
+            text="A passionate front-end developer with one year of experience in building websites and web applications."
+            email="ahmedmoh0107@gmail.com"
+            githubL="https://github.com/AhmedMohamed800"
+            websiteL="https://twitter.com/AhmedMo83120311"
+            alt="Ahmed's github"
+          />
+          <Member
+            name="Abdelrhman (DINAMOW) Abdelhammed"
+            title="Back-end developer"
+            text="A passionate back-end developer with wide experience in ASP.NET, Flask, Django, Laravel"
+            email="meemoo102039@gmail.com"
+            githubL="https://github.com/Dinamow"
+            websiteL="https://twitter.com/Dinamow2130"
+            alt="Dianmow"
+          />
+        </section>
+        <p className="flex gap-2 text-second ">
+          Project source code:{" "}
+          <a href="https://github.com/Dinamow/Career_Compass" target="_blank">
+            {" "}
+            <img
+              src={github}
+              alt="github for source code"
+              width="22px"
+              height="22px"
+              className=" hover:opacity-80 cursor-pointer"
+            />
+          </a>
+        </p>
       </section>
       <section className="flex flex-col gap-3 mb-10">
         <h1 className="header mb-5">Statistics</h1>

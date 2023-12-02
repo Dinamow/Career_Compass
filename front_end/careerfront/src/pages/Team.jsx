@@ -11,7 +11,7 @@ const Team = () => {
           text="A passionate front-end developer with one year of experience in building websites and web applications."
           email="ahmedmoh0107@gmail.com"
           githubL="https://github.com/AhmedMohamed800"
-          websiteL="https://github.com/AhmedMohamed800"
+          websiteL="https://twitter.com/AhmedMo83120311"
           alt="Ahmed's github"
         />
         <Member
@@ -20,7 +20,7 @@ const Team = () => {
           text="A passionate back-end developer with wide experience in ASP.NET, Flask, Django, Laravel"
           email="meemoo102039@gmail.com"
           githubL="https://github.com/Dinamow"
-          websiteL="https://github.com/Dinamow"
+          websiteL="https://twitter.com/Dinamow2130"
           alt="Dianmow"
         />
       </section>

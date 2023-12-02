@@ -1,5 +1,6 @@
 import github from "../assets/github.svg";
-import website from "../assets/website.svg";
+// import website from "../assets/website.svg";
+import website from "../assets/twitter.svg";
 
 const Member = ({
   name,
@@ -13,8 +14,8 @@ const Member = ({
 }) => {
   return (
     <div className="bg-back border border-gray-300 rounded-sm">
-      <div className={`${image ? image : "bg-slate-300"} h-[250px]`}></div>
-      <div className="px-5 pt-3 pb-2 flex flex-col gap-[4px]">
+      {/* <div className={`${image ? image : "bg-slate-300"} h-[250px]`}></div> */}
+      <div className="px-5 pt-5 pb-2 flex flex-col gap-[4px]">
         <h4 className="text-second font-bold">{name}</h4>
         <h4 className="text-prime font-medium">{title}</h4>
         <p className="text-second text-justify">{text}</p>
@@ -24,7 +25,7 @@ const Member = ({
           <a href={websiteL} target="_blank" className="hover:opacity-90">
             <img
               src={website}
-              alt={`website ${alt}`}
+              alt={`twitter ${alt}`}
               width="22px"
               height="22px"
             />

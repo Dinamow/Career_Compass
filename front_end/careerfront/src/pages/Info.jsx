@@ -18,7 +18,7 @@ const Info = () => {
   }
 
   return (
-    <main className="layOutStyle flex justify-center">
+    <main className="layOutStyle flex justify-center bg-prime">
       <section className="bg-prime w-full py-5 px-[200px]  max-semiDesctop:px-[80px] max-md:px-[20px] justify-center      rounded-sm flex flex-col">
         <h1 className="text-white font-bold text-2xl mb-8">
           User Profile Information
