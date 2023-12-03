@@ -197,7 +197,8 @@ class Storage:
         self.__cursor.execute(self.__command)
         self.__connection.commit()
         email = {'email': data['email']}
-        self.sende(app, email, data['name'], data['uuid'])
+        if self.is_valid_email(data['email']):
+            self.sende(app, email, data['name'], data['uuid'])
         self.__cursor.close()
         self.close()
 

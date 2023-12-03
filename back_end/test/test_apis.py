@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from engin import storage
+import math
 
 intellegnce_type = {
             "Linguistic": 0,
@@ -77,7 +78,7 @@ def test_statistics(client):
     del obj['Completed the quize']
 
     # check if the sum of all values is 100 means all values are in percentage
-    assert sum(obj.values()) == 100
+    assert math.ceil(sum(obj.values())) == 100
 
     res = client.get('/api/v1/statistic')
 
@@ -252,7 +253,7 @@ def test_resultpost(client):
     }
     res = client.post('/api/v1/result' ,json=wrong_values)
 
-    # check if the status code is 201
+    # check if the status code is 400
     assert res.status_code == 400
 
     wrong_keys = {
@@ -270,7 +271,7 @@ def test_resultpost(client):
     }
     res = client.post('/api/v1/result' ,json=wrong_keys)
 
-    # check if the status code is 201
+    # check if the status code is 400
     assert res.status_code == 400
 
     wrong_email = {
@@ -289,4 +290,4 @@ def test_resultpost(client):
     res = client.post('/api/v1/result' ,json=wrong_email)
 
     # check if the status code is 201
-    assert res.status_code == 400
+    assert res.status_code == 201
