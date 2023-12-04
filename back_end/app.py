@@ -46,9 +46,6 @@ def post():
     if storage.postvalidate(data):
         abort(400, storage.postvalidate(data)["Error"])
 
-    if not storage.is_valid_email(data['email']):
-        abort(400, "Invalid email")
-
     data['uuid'] = uuid4()
 
     storage.insert(data, app)
